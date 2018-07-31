@@ -10,56 +10,56 @@ swdir=/data/mta4/space_weather
 cd $git_dir
 git checkout update
 
-diff $git_dir/space_weather/aceviolation_protons.csh $swdir/
+diff $git_dir/space_weather/aceviolation_protons.csh $swdir/aceviolation_protons.csh
 cp -f $git_dir/space_weather/aceviolation_protons.csh $swdir/
 
-diff $git_dir/space_weather/ace_12h_viol.pl $swdir/
+diff $git_dir/space_weather/ace_12h_viol.pl $swdir/ace_12h_viol.pl
 cp -f $git_dir/space_weather/ace_12h_viol.pl $swdir/
 
-diff $git_dir/space_weather/G13_yellow_viol.pl $swdir/
+diff $git_dir/space_weather/G13_yellow_viol.pl $swdir/G13_yellow_viol.pl
 cp -f $git_dir/space_weather/G13_yellow_viol.pl $swdir/
 
-diff $git_dir/space_weather/goes_hrc_proxy_viol.pl $swdir/
+diff $git_dir/space_weather/goes_hrc_proxy_viol.pl $swdir/goes_hrc_proxy_viol.pl
 cp -f $git_dir/space_weather/goes_hrc_proxy_viol.pl $swdir/
 
-diff $git_dir/space_weather/G13_red_viol.pl $swdir/
+diff $git_dir/space_weather/G13_red_viol.pl $swdir/G13_red_viol.pl
 cp -f $git_dir/space_weather/G13_red_viol.pl $swdir/
 
-diff $git_dir/space_weather/ace_invalid_spec.csh $swdir/
+diff $git_dir/space_weather/ace_invalid_spec.csh $swdir/ace_invalid_spec.csh
 cp -f $git_dir/space_weather/ace_invalid_spec.csh $swdir/
 
-diff $git_dir/space_weather/aceviolation_protonsP3_P5.csh $swdir/
+diff $git_dir/space_weather/aceviolation_protonsP3_P5.csh $swdir/aceviolation_protonsP3_P5.csh
 cp -f $git_dir/space_weather/aceviolation_protonsP3_P5.csh $swdir/
 
-diff $git_dir/space_weather/aceviolation_protonsP6.csh $swdir/
+diff $git_dir/space_weather/aceviolation_protonsP6.csh $swdir/aceviolation_protonsP6.csh
 cp -f $git_dir/space_weather/aceviolation_protonsP6.csh $swdir/
 
-diff $git_dir/space_weather/G15_yellow_viol.pl $swdir/
+diff $git_dir/space_weather/G15_yellow_viol.pl $swdir/G15_yellow_viol.pl
 cp -f $git_dir/space_weather/G15_yellow_viol.pl $swdir/
 
-diff $git_dir/space_weather/G15_red_viol.pl $swdir/
+diff $git_dir/space_weather/G15_red_viol.pl $swdir/G15_red_viol.pl
 cp -f $git_dir/space_weather/G15_red_viol.pl $swdir/
 
 # Dumps monitor
 dumpdir=/data/mta/Script/Dumps/Dumps_mon
 
-diff $git_dir/dumps/dumps_mon_2.6.pl $dumpdir/
+diff $git_dir/dumps/dumps_mon_2.6.pl $dumpdir/dumps_mon_2.6.pl
 cp -f $git_dir/dumps/dumps_mon_2.6.pl $dumpdir/
 
 # Snapshot
 snapdir_primary=/data/mta4/www/
 snapdir_mirror=/data/mta_www/MIRROR/
 
-diff $git_dir/snapshot/tlogr_linux.pl $snapdir_primary/Snapshot/
+diff $git_dir/snapshot/tlogr_linux.pl $snapdir_primary/Snapshot/tlogr_linux.pl
 cp -f $git_dir/snapshot/tlogr_linux.pl $snapdir_primary/Snapshot/
 
-diff $git_dir/snapshot/check_state.pm $snapdir_primary/Snapshot/
+diff $git_dir/snapshot/check_state.pm $snapdir_primary/Snapshot/check_state.pm
 cp -f $git_dir/snapshot/check_state.pm $snapdir_primary/Snapshot/
 
-diff $git_dir/snapshot/check_state_alerts.pm $snapdir_primary/Snapshot/
+diff $git_dir/snapshot/check_state_alerts.pm $snapdir_primary/Snapshot/check_state_alerts.pm
 cp -f $git_dir/snapshot/check_state_alerts.pm $snapdir_primary/Snapshot/
 
-diff $git_dir/snapshot/check_state_noalerts.pm $snapdir_primary/Snapshot/
+diff $git_dir/snapshot/check_state_noalerts.pm $snapdir_primary/Snapshot//check_state_noalerts.pm
 cp -f $git_dir/snapshot/check_state_noalerts.pm $snapdir_primary/Snapshot/
 
 # Acorn
