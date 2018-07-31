@@ -22,10 +22,8 @@ cp -f $git_dir/space_weather/G13_yellow_viol.pl $swdir/
 diff $git_dir/space_weather/goes_hrc_proxy_viol.pl $swdir/
 cp -f $git_dir/space_weather/goes_hrc_proxy_viol.pl $swdir/
 
-
 diff $git_dir/space_weather/G13_red_viol.pl $swdir/
 cp -f $git_dir/space_weather/G13_red_viol.pl $swdir/
-
 
 diff $git_dir/space_weather/ace_invalid_spec.csh $swdir/
 cp -f $git_dir/space_weather/ace_invalid_spec.csh $swdir/
@@ -65,17 +63,17 @@ diff $git_dir/snapshot/check_state_noalerts.pm $snapdir_primary/Snapshot/
 cp -f $git_dir/snapshot/check_state_noalerts.pm $snapdir_primary/Snapshot/
 
 # Acorn
-diff $git_dir/acorn/run_acorn.primary.pl $snapdir_primary/Snapshot/run-acorn.pl
-cp -f $git_dir/acorn/run_acorn.primary.pl $snapdir_primary/Snapshot/run-acorn.pl
+diff $git_dir/acorn/run-acorn.primary.pl $snapdir_primary/Snapshot/run-acorn.pl
+cp -f $git_dir/acorn/run-acorn.primary.pl $snapdir_primary/Snapshot/run-acorn.pl
 
-diff $git_dir/acorn/run_acorn.primary.SOH.pl $snapdir_primary/SOH/run-acorn.pl
-cp -f $git_dir/acorn/run_acorn.primary.SOH.pl $snapdir_primary/SOH/run-acorn.pl
+diff $git_dir/acorn/run-acorn.primary.SOH.pl $snapdir_primary/SOH/run-acorn.pl
+cp -f $git_dir/acorn/run-acorn.primary.SOH.pl $snapdir_primary/SOH/run-acorn.pl
 
-diff $git_dir/acorn/run_acorn.mirror.pl $snapdir_mirror/Snap/Scrips/run-acorn.pl
-cp -f $git_dir/acorn/run_acorn.mirror.pl $snapdir_mirror/Snap/Scripts/run-acorn.pl
+diff $git_dir/acorn/run-acorn.mirror.pl $snapdir_mirror/Snap/Scrips/run-acorn.pl
+cp -f $git_dir/acorn/run-acorn.mirror.pl $snapdir_mirror/Snap/Scripts/run-acorn.pl
 
-diff $git_dir/acorn/run_acorn.mirror.SOH.pl $snapdir_mirror/SOH/Scripts/run-acorn.pl
-cp -f $git_dir/acorn/run_acorn.mirror.SOH.pl $snapdir_mirror/SOH/Scripts/run-acorn.pl
+diff $git_dir/acorn/run-acorn.mirror.SOH.pl $snapdir_mirror/SOH/Scripts/run-acorn.pl
+cp -f $git_dir/acorn/run-acorn.mirror.SOH.pl $snapdir_mirror/SOH/Scripts/run-acorn.pl
 
-diff $git_dir/acorn/run_acorn.mirror.PCAD.pl $snapdir_mirror/SOH/Scripts/run-acorn-pcad.pl
-cp -f $git_dir/acorn/run_acorn.mirror.PCAD.pl $snapdir_mirror/SOH/Scripts/run-acorn-pcad.pl
+diff $git_dir/acorn/run-acorn.mirror.PCAD.pl $snapdir_mirror/SOH/Scripts/run-acorn-pcad.pl
+cp -f $git_dir/acorn/run-acorn.mirror.PCAD.pl $snapdir_mirror/SOH/Scripts/run-acorn-pcad.pl
