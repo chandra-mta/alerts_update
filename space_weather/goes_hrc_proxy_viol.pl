@@ -30,7 +30,7 @@ while (<IN>) {
             print OUT "see http://cxc.cfa.harvard.edu/mta/G13.html\n";
             print OUT "This message sent to sot_ace_alert\n";
             close OUT;
-            `cat $lockfile | mailx -s "GOES HRC proxy" sot_ace_alert`;
+            `cat $lockfile | mailx -s "GOES HRC proxy" sot_ace_alert\@cfa.harvard.edu`;
         }
     }
 }
