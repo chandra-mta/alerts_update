@@ -8,7 +8,7 @@ git_dir=/home/malgosia/git/alerts_update
 swdir=/data/mta4/space_weather
 
 cd $git_dir
-git checkout update
+git checkout master
 
 cp -f $git_dir/space_weather/aceviolation_protons.csh $swdir/
 cp -f $git_dir/space_weather/ace_12h_viol.pl $swdir/
