@@ -37,8 +37,8 @@ if (($hour_now < 24.) && ($hour_now > 7.)) {
             print OUT "Radiation team should investigate\n";
             print OUT "This message sent to sot_ace_alert\n";
             close OUT;
-            `cat $lockfile | mailx -s "ACE no valid data for >12h" sot_ace_alert`;
-            # `cat $lockfile | mailx -s "ACE no valid data for >12h" malgosia swolk`;
+            `cat $lockfile | mailx -s "ACE no valid data for >12h" sot_ace_alert\@cfa.harvard.edu`;
+            # `cat $lockfile | mailx -s "ACE no valid data for >12h" msobolewska\@cfa.harvard.edu swolk\@cfa.harvard.edu`;
             # Store the 12h archive that triggered the alert
             `cp $infile "$lockdir/ace_12h_archive_alert"`;
         }

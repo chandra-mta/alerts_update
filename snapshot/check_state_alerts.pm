@@ -1191,8 +1191,8 @@ sub send_tank_red {
     print FILE "\nSnapshot:\n";
     print FILE "http://cxc.harvard.edu/cgi-gen/mta/Snap/snap.cgi\n"; #debug
     close FILE;
-    #open MAIL, "|mailx -s PMTANKP_test brad\@head.cfa.harvard.edu,swolk";
-    open MAIL, "|mailx -s PMTANKP sot_red_alert\@head.cfa.harvard.edu";
+    #open MAIL, "|mailx -s PMTANKP_test msobolewska\@cfa.harvard.edu,swolk";
+    open MAIL, "|mailx -s PMTANKP sot_red_alert\@cfa.harvard.edu";
     #open MAIL, "|more"; #debug
     open FILE, $afile;
     while (<FILE>) {
@@ -1217,8 +1217,8 @@ sub send_tank_yellow {
     print FILE "\nSnapshot:\n";
     print FILE "http://cxc.harvard.edu/cgi-gen/mta/Snap/snap.cgi\n"; #debug
     close FILE;
-    #open MAIL, "|mailx -s PMTANKP brad\@head.cfa.harvard.edu";
-    open MAIL, "|mailx -s PMTANKP sot_yellow_alert\@head.cfa.harvard.edu";
+    #open MAIL, "|mailx -s PMTANKP msobolewska\@cfa.harvard.edu";
+    open MAIL, "|mailx -s PMTANKP sot_yellow_alert\@cfa.harvard.edu";
     #open MAIL, "|more"; #debug
     open FILE, $afile;
     while (<FILE>) {
@@ -1244,8 +1244,9 @@ sub send_107_alert {
     open FILE, ">$afile";
     #print FILE "  THIS IS ONLY A TEST !!!! \n\n"; #debug
     #print FILE "(Testing ... I wasn't working before, but now I am)\n"; #debug
-    print FILE "Chandra realtime telemetry shows SCS107 $_[0] at $obt UT\n\n";
-    print FILE "\nTelecon on 1-877-521-0441 111165\# now.\n";
+    print FILE "Chandra realtime telemetry shows SCS107 $_[0] at $obt UT\n";
+    print FILE "\nTelecon on 1-844-467-6272 111165\# now.\n";
+    print FILE "A reminder, this may be connected to the voice loops at OCC\n";
     # try to figure out next comm passes
     open COMS, $comfile;
     <COMS>;
@@ -1286,13 +1287,13 @@ sub send_107_alert {
     #print FILE "\n TEST   TEST   TEST   TEST   TEST   TEST   TEST\n"; #debug
     close FILE;
 
-    #open MAIL, "|mail brad\@head.cfa.harvard.edu swolk\@head.cfa.harvard.edu rac\@head.cfa.harvard.edu";
-    #open MAIL, "|mail brad\@head.cfa.harvard.edu swolk\@head.cfa.harvard.edu";
-    #open MAIL, "|mail sot_yellow_alert\@head.cfa.harvard.edu";
-    #open MAIL, "|mailx -s SCS107 sot_red_alert\@head.cfa.harvard.edu";
-    open MAIL, "|mailx -s 'SCS107 telecon 111165\# now' sot_red_alert\@head.cfa.harvard.edu operators\@head.cfa.harvard.edu";
+    #open MAIL, "|mail msobolewska\@cfa.harvard.edu swolk\@cfa.harvard.edu rac\@cfa.harvard.edu";
+    #open MAIL, "|mail msobolewska\@cfa.harvard.edu swolk\@cfa.harvard.edu";
+    #open MAIL, "|mail sot_yellow_alert\@cfa.harvard.edu";
+    #open MAIL, "|mailx -s SCS107 sot_red_alert\@cfa.harvard.edu";
+    open MAIL, "|mailx -s 'SCS107 telecon 111165\# now' sot_red_alert\@cfa.harvard.edu operators\@cfa.harvard.edu";
     #open MAIL, "|mailx -s 'SCS107 telecon 111165\# now' 617257386\@mms.att.net";
-    #open MAIL, "|mailx -s SCS107 brad\@head.cfa.harvard.edu";
+    #open MAIL, "|mailx -s SCS107 msobolewska\@cfa.harvard.edu";
     #open MAIL, "|more"; #debug
     open FILE, $afile;
     while (<FILE>) {
@@ -1314,6 +1315,8 @@ sub send_nsun_alert {
   } else {
     open FILE, ">$afile";
     print FILE "Chandra realtime telemetry shows PCADMODE $_[0] at $obt UT\n\n";
+    print FILE "\nTelecon on 1-844-467-6272 111165\# now.\n";
+    print FILE "A reminder, this may be connected to the voice loops at OCC\n";
     # try to figure out next comm passes
     open COMS, $comfile;
     my @time = split(":", $obt);
@@ -1350,10 +1353,10 @@ sub send_nsun_alert {
     #print FILE "\n TEST   TEST   TEST   TEST   TEST   TEST   TEST\n"; #debug
     close FILE;
 
-    #open MAIL, "|mailx -s NSUN brad\@head.cfa.harvard.edu swolk\@head.cfa.harvard.edu";
-    #open MAIL, "|mailx -s NSUN sot_yellow_alert\@head.cfa.harvard.edu";
-    open MAIL, "|mailx -s NSUN sot_red_alert\@head.cfa.harvard.edu";
-    #open MAIL, "|mailx -s NSUN sot_red_alert\@head.cfa.harvard.edu operators\@head.cfa.harvard.edu";
+    #open MAIL, "|mailx -s NSUN msobolewska\@cfa.harvard.edu swolk\@cfa.harvard.edu";
+    #open MAIL, "|mailx -s NSUN sot_yellow_alert\@cfa.harvard.edu";
+    open MAIL, "|mailx -s 'NSUN telecon 111165\# now' sot_red_alert\@cfa.harvard.edu";
+    #open MAIL, "|mailx -s NSUN sot_red_alert\@cfa.harvard.edu operators\@cfa.harvard.edu";
     #open MAIL, "|more"; #debug
     open FILE, $afile;
     while (<FILE>) {
@@ -1378,11 +1381,11 @@ sub send_sim_unsafe_alert {
       
     print FILE "\nSnapshot:\n";
     print FILE "http://cxc.harvard.edu/cgi-gen/mta/Snap/snap.cgi\n"; #debug
-    print FILE "This message sent to sot_yellow_alert\n"; #debug
+    print FILE "This message sent to swolk, malgosia\n"; #debug
     close FILE;
 
-    open MAIL, "|mailx -s SIM_UNSAFE! brad\@head.cfa.harvard.edu";
-    #open MAIL, "|mailx -s SIM_UNSAFE! sot_yellow_alert\@head.cfa.harvard.edu";
+    open MAIL, "|mailx -s SIM_UNSAFE! swolk\@cfa.harvard.edu msobolewska\@cfa.harvard.edu";
+    #open MAIL, "|mailx -s SIM_UNSAFE! sot_yellow_alert\@cfa.harvard.edu";
     open FILE, $afile;
     while (<FILE>) {
       print MAIL $_;
@@ -1408,10 +1411,10 @@ sub send_hrc_shld_alert {
     print FILE "This message sent to sot_lead\n"; #debug
     close FILE;
 
-    #open MAIL, "|mailx -s 'HRC SHIELD' brad\@head.cfa.harvard.edu";
-    #open MAIL, "|mailx -s 'HRC SHIELD' brad\@head.cfa.harvard.edu swolk\@head.cfa.harvard.edu";
-    #open MAIL, "|mailx -s 'HRC SHIELD' sot_lead\@head.cfa.harvard.edu brad\@head.cfa.harvard.edu";
-    open MAIL, "|mailx -s 'HRC SHIELD' sot_yellow_alert\@head.cfa.harvard.edu 6172573986\@mobile.mycingular.com";
+    #open MAIL, "|mailx -s 'HRC SHIELD' msobolewska\@cfa.harvard.edu";
+    #open MAIL, "|mailx -s 'HRC SHIELD' msobolewska\@cfa.harvard.edu swolk\@cfa.harvard.edu";
+    #open MAIL, "|mailx -s 'HRC SHIELD' sot_lead\@cfa.harvard.edu msobolewska\@cfa.harvard.edu";
+    open MAIL, "|mailx -s 'HRC SHIELD' sot_yellow_alert\@cfa.harvard.edu 6172573986\@mobile.mycingular.com";
     open FILE, $afile;
     while (<FILE>) {
       print MAIL $_;
@@ -1435,7 +1438,9 @@ sub send_brit_alert {
     open FILE, ">$afile";
     #print FILE "  THIS IS ONLY A TEST !!!! \n\n"; #debug
     #print FILE "(Testing ... I wasn't working before, but now I am)\n"; #debug
-    print FILE "Chandra realtime telemetry shows AOFSTAR $_[0] at $obt UT\n\n";
+    print FILE "Chandra realtime telemetry shows AOFSTAR $_[0] at $obt UT\n";
+    print FILE "\nTelecon on 1-844-467-6272 111165\# now.\n";
+    print FILE "A reminder, this may be connected to the voice loops at OCC\n";
     # try to figure out next comm passes
     open COMS, $comfile;
     my @time = split(":", $obt);
@@ -1467,19 +1472,19 @@ sub send_brit_alert {
     print FILE "\nSnapshot:\n";
     print FILE "http://cxc.harvard.edu/cgi-gen/mta/Snap/snap.cgi\n"; #debug
     #print FILE "http://cxc.harvard.edu/mta_days/MIRROR/Snap/snap.cgi\n"; #debug
-    print FILE "This message sent to sot_yellow_alert\n"; #debug
-    #print FILE "This message sent to sot_red_alert\n"; #debug
+    #print FILE "This message sent to sot_yellow_alert\n"; #debug
+    print FILE "This message sent to sot_red_alert\n"; #debug
     #print FILE "This message sent to brad rac swolk\n"; #debug
     #print FILE "This message sent to brad\n"; #debug
     #print FILE "\n TEST   TEST   TEST   TEST   TEST   TEST   TEST\n"; #debug
     close FILE;
 
-    #open MAIL, "|mail brad\@head.cfa.harvard.edu swolk\@head.cfa.harvard.edu rac\@head.cfa.harvard.edu";
-    #open MAIL, "|mail brad\@head.cfa.harvard.edu swolk\@head.cfa.harvard.edu";
-    open MAIL, "|mailx -s BRIT sot_yellow_alert\@head.cfa.harvard.edu";
-    #open MAIL, "|mailx -s BRIT sot_red_alert\@head.cfa.harvard.edu";
-    #open MAIL, "|mailx -s BRIT brad\@head.cfa.harvard.edu";
-    #open MAIL, "|mail brad\@head.cfa.harvard.edu";
+    #open MAIL, "|mail msobolewska\@cfa.harvard.edu swolk\@cfa.harvard.edu rac\@cfa.harvard.edu";
+    #open MAIL, "|mail msobolewska\@cfa.harvard.edu swolk\@cfa.harvard.edu";
+    #open MAIL, "|mailx -s BRIT sot_yellow_alert\@cfa.harvard.edu";
+    open MAIL, "|mailx -s 'BRIT telecon 111165\# now' sot_red_alert\@cfa.harvard.edu";
+    #open MAIL, "|mailx -s BRIT msobolewska\@cfa.harvard.edu";
+    #open MAIL, "|mail msobolewska\@cfa.harvard.edu";
     #open MAIL, "|more"; #debug
     open FILE, $afile;
     while (<FILE>) {
@@ -1534,12 +1539,12 @@ sub send_cpe_alert {
     print FILE "\nSnapshot:\n";
     print FILE "http://cxc.harvard.edu/cgi-gen/mta/Snap/snap.cgi\n"; #debug
     #print FILE "http://cxc.harvard.edu/mta_days/MIRROR/Snap/snap.cgi\n"; #debug
-    print FILE "This message sent to brad\n"; #debug
+    print FILE "This message sent to malgosia\n"; #debug
     #print FILE "This message sent to sot_safemode_alert\n"; #debug
     close FILE;
 
-    #open MAIL, "|mailx -s CPEstat sot_safemode_alert\@head.cfa.harvard.edu";
-    open MAIL, "|mailx -s CPEstat brad\@head.cfa.harvard.edu";
+    #open MAIL, "|mailx -s CPEstat sot_safemode_alert\@cfa.harvard.edu";
+    open MAIL, "|mailx -s CPEstat msobolewska\@cfa.harvard.edu";
     #open MAIL, "|more"; #debug
     open FILE, $afile;
     while (<FILE>) {
@@ -1562,8 +1567,9 @@ sub send_fmt_alert {
   } else {
     open FILE, ">$afile";
     #print FILE "  THIS IS ONLY A TEST !!!! \n\n"; #debug
-    print FILE "Chandra realtime telemetry shows FMT$_[0] at $obt UT\n\n";
-    print FILE "\nTelecon on 1-877-521-0441 111165\# now.\n";
+    print FILE "Chandra realtime telemetry shows FMT$_[0] at $obt UT\n";
+    print FILE "\nTelecon on 1-844-467-6272 111165\# now.\n";
+    print FILE "A reminder, this may be connected to the voice loops at OCC\n";
     # try to figure out next comm passes
     open COMS, $comfile;
     my @time = split(":", $obt);
@@ -1598,9 +1604,9 @@ sub send_fmt_alert {
     #print FILE "\n TEST   TEST   TEST   TEST   TEST   TEST   TEST\n"; #debug
     close FILE;
 
-    #open MAIL, "|mail brad\@head.cfa.harvard.edu swolk\@head.cfa.harvard.edu rac\@head.cfa.harvard.edu";
-    open MAIL, "|mailx -s 'FMT5: telecon 111165\# now' sot_safemode_alert\@head.cfa.harvard.edu";
-    #open MAIL, "|mail brad\@head.cfa.harvard.edu";
+    #open MAIL, "|mail msobolewska\@cfa.harvard.edu swolk\@cfa.harvard.edu rac\@cfa.harvard.edu";
+    open MAIL, "|mailx -s 'FMT5: telecon 111165\# now' sot_safemode_alert\@cfa.harvard.edu";
+    #open MAIL, "|mail msobolewska\@cfa.harvard.edu";
     #open MAIL, "|more"; #debug
     open FILE, $afile;
     while (<FILE>) {
@@ -1656,13 +1662,13 @@ sub send_gyro_alert {
     print FILE "http://cxc.harvard.edu/cgi-gen/mta/Snap/snap.cgi\n"; #debug
     #print FILE "This message sent to sot_red_alert\n"; #debug
     #print FILE "This message sent to swolk brad brad1\n"; #debug
-    print FILE "This message sent to brad brad1\n"; #debug
+    print FILE "This message sent to malgosia\n"; #debug
     #print FILE "\n TEST   TEST   TEST   TEST   TEST   TEST   TEST\n"; #debug
     close FILE;
 
-    #open MAIL, "|mailx -s AIRU1G1I brad\@head.cfa.harvard.edu swolk\@head.cfa.harvard.edu 6172573986\@mobile.mycingular.com";
-    open MAIL, "|mailx -s AIRU1G1I brad\@head.cfa.harvard.edu 6172573986\@mobile.mycingular.com";
-    #open MAIL, "|mailx -s AIRU1G1I sot_red_alert\@head.cfa.harvard.edu";
+    #open MAIL, "|mailx -s AIRU1G1I msobolewska\@cfa.harvard.edu swolk\@cfa.harvard.edu 6172573986\@mobile.mycingular.com";
+    open MAIL, "|mailx -s AIRU1G1I msobolewska\@cfa.harvard.edu";
+    #open MAIL, "|mailx -s AIRU1G1I sot_red_alert\@cfa.harvard.edu";
     open FILE, $afile;
     while (<FILE>) {
       print MAIL $_;
@@ -1686,8 +1692,8 @@ sub send_ctxpwr_alert {
     print FILE "This message sent to sot_yellow_alert\n"; #debug
     close FILE;
 
-    #open MAIL, "|mailx -s CTXPWR brad\@head.cfa.harvard.edu swolk\@head.cfa.harvard.edu";
-    open MAIL, "|mailx -s CTXPWR sot_yellow_alert\@head.cfa.harvard.edu";
+    #open MAIL, "|mailx -s CTXPWR msobolewska\@cfa.harvard.edu swolk\@cfa.harvard.edu";
+    open MAIL, "|mailx -s CTXPWR sot_yellow_alert\@cfa.harvard.edu";
     open FILE, $afile;
     while (<FILE>) {
       print MAIL $_;
@@ -1711,8 +1717,8 @@ sub send_ctxv_alert {
     print FILE "This message sent to sot_yellow_alert\n"; #debug
     close FILE;
 
-    #open MAIL, "|mailx -s CTXV brad\@head.cfa.harvard.edu swolk\@head.cfa.harvard.edu";
-    open MAIL, "|mailx -s CTXV sot_yellow_alert\@head.cfa.harvard.edu";
+    #open MAIL, "|mailx -s CTXV msobolewska\@cfa.harvard.edu swolk\@cfa.harvard.edu";
+    open MAIL, "|mailx -s CTXV sot_yellow_alert\@cfa.harvard.edu";
     open FILE, $afile;
     while (<FILE>) {
       print MAIL $_;
@@ -1737,8 +1743,9 @@ sub send_hkp27v_alert {
     #print FILE "This message sent to sot_lead,fot,emartin\n"; #debug
     close FILE;
 
-    #open MAIL, "|mailx -s HKP27V sot_yellow_alert\@head.cfa.harvard.edu";
-    open MAIL, "|mailx -s HKP27V juda\@head.cfa.harvard.edu plucinsk\@head.cfa.harvard.edu aldcroft\@head.cfa.harvard.edu wap\@head.cfa.harvard.edu swolk\@head.cfa.harvard.edu das\@head.cfa.harvard.edu emk\@head.cfa.harvard.edu nadams\@head.cfa.harvard.edu depasq\@head.cfa.harvard.edu fot\@head.cfa.harvard.edu emartin\@head.cfa.harvard.edu 8572591479\@vtext brad\@head.cfa.harvard.edu";
+    #open MAIL, "|mailx -s HKP27V sot_yellow_alert\@cfa.harvard.edu";
+    #open MAIL, "|mailx -s HKP27V juda\@head.cfa.harvard.edu plucinsk\@head.cfa.harvard.edu aldcroft\@head.cfa.harvard.edu wap\@head.cfa.harvard.edu swolk\@head.cfa.harvard.edu das\@head.cfa.harvard.edu emk\@head.cfa.harvard.edu nadams\@head.cfa.harvard.edu depasq\@head.cfa.harvard.edu fot\@head.cfa.harvard.edu emartin\@head.cfa.harvard.edu 8572591479\@vtext brad\@head.cfa.harvard.edu";
+    open MAIL, "|mailx -s HKP27V swolk\@cfa.harvard.edu msobolewska\@cfa.harvard.edu";
     open FILE, $afile;
     while (<FILE>) {
       print MAIL $_;
@@ -1762,8 +1769,8 @@ sub send_pline03t_alert {
     print FILE "This message sent to sot_yellow_alert\n"; #debug
     close FILE;
 
-    #open MAIL, "|mailx -s PLINE03T brad\@head.cfa.harvard.edu";
-    open MAIL, "|mailx -s PLINE03T sot_yellow_alert\@head.cfa.harvard.edu";
+    #open MAIL, "|mailx -s PLINE03T msobolewska\@cfa.harvard.edu";
+    open MAIL, "|mailx -s PLINE03T sot_yellow_alert\@cfa.harvard.edu";
     open FILE, $afile;
     while (<FILE>) {
       print MAIL $_;
@@ -1787,8 +1794,8 @@ sub send_pline04t_alert {
     print FILE "This message sent to sot_yellow_alert\n"; #debug
     close FILE;
 
-    #open MAIL, "|mailx -s PLINE04T brad\@head.cfa.harvard.edu";
-    open MAIL, "|mailx -s PLINE04T sot_yellow_alert\@head.cfa.harvard.edu";
+    #open MAIL, "|mailx -s PLINE04T msobolewska\@cfa.harvard.edu";
+    open MAIL, "|mailx -s PLINE04T sot_yellow_alert\@cfa.harvard.edu";
     open FILE, $afile;
     while (<FILE>) {
       print MAIL $_;
@@ -1812,7 +1819,7 @@ sub send_aacccdpt_yellow_alert {
     #print FILE "This message sent to taldcroft\n"; #debug
     close FILE;
 
-    open MAIL, "|mailx -s AACCCDPT jeanconn,aldcroft,emartin,brad";
+    open MAIL, "|mailx -s AACCCDPT jeanconn,aldcroft,emartin,msobolewska\@cfa.harvard.edu";
     #open MAIL, "|mailx -s AACCCDPT brad";
     open FILE, $afile;
     while (<FILE>) {
@@ -1834,11 +1841,11 @@ sub send_aacccdpt_red_alert {
     open FILE, ">$afile";
     print FILE "Chandra realtime telemetry shows  AACCCDPT = $_[0] C at $obt UT\n";
     print FILE "Limit < 0 C\n\n";
-    print FILE "This message sent to sot_red_alert\n"; #debug
+    print FILE "This message sent to malgosia\n"; #debug
     close FILE;
 
-    open MAIL, "|mailx -s AACCCDPT brad\@head.cfa.harvard.edu";
-    #open MAIL, "|mailx -s AACCCDPT sot_red_alert\@head.cfa.harvard.edu,aspect_help,6177214364\@vtext.com,8572591479\@vtext";
+    open MAIL, "|mailx -s AACCCDPT msobolewska\@cfa.harvard.edu";
+    #open MAIL, "|mailx -s AACCCDPT sot_red_alert\@cfa.harvard.edu,aspect_help,6177214364\@vtext.com,8572591479\@vtext";
     open FILE, $afile;
     while (<FILE>) {
       print MAIL $_;
@@ -1863,8 +1870,8 @@ sub send_ldrtno_alert {
     print FILE "This message sent to sot_red_alert\n"; #debug
     close FILE;
 
-    #open MAIL, "|mailx -s 3LDRTNO brad\@head.cfa.harvard.edu";
-    open MAIL, "|mailx -s 3LDRTNO sot_red_alert\@head.cfa.harvard.edu";
+    #open MAIL, "|mailx -s 3LDRTNO msobolewska\@cfa.harvard.edu";
+    open MAIL, "|mailx -s 3LDRTNO sot_red_alert\@cfa.harvard.edu";
     open FILE, $afile;
     while (<FILE>) {
       print MAIL $_;
